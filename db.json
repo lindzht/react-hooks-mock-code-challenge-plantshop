@@ -43,9 +43,9 @@
       "price": 55
     },
     {
-      "name": "Cage",
+      "name": "Cagey",
       "image": "https://www.syfy.com/sites/syfy/files/styles/blog-post-embedded--tablet-1_5x/public/2019/10/faceoff_cage.jpg",
-      "price": "10000",
+      "price": "0.99",
       "id": 8
     }
   ]

@@ -36,13 +36,13 @@ function PlantCard({plant, deletePlant, setNewPrice, newPrice, elevatorFunction}
       {plant.image?  <img src={plant.image} alt={plant.name} /> : <img src={"https://via.placeholder.com/400"} alt={plant.name} />}
       <h4>{plant.name}</h4> 
       {editPrice ? 
-        <p onClick={handleEditClick}>  Price: {plant.price} <span style={{color: "gray", fontStyle: "italic"}}> &nbsp; Edit Price</span> </p> 
+        <p onClick={handleEditClick}>  Price: ${plant.price} <span style={{color: "gray", fontStyle: "italic"}}> &nbsp; Edit Price</span> </p> 
           : <div>
               <input 
               type="text" 
               name="price" 
               placeholder="Price"
-              value={ newPrice }
+              value= { newPrice }
               onChange={handlePriceChange} />
             <button onClick={sendNewPriceUp} type="submit">Edit Price</button>
           </div>
