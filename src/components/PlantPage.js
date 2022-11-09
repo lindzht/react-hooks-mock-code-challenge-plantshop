@@ -8,8 +8,8 @@ function PlantPage() {
 
   const [plants, setPlants] = useState([]);
   const [newPrice, setNewPrice] = useState("")
+  const [searchText, setSearchText] = useState("")
 
-  console.log(newPrice);
 
   useEffect(() => {
     fetch("http://localhost:6001/plants")
@@ -32,17 +32,12 @@ function PlantPage() {
     setPlants(newPlantArray);
   }
   
-
-  function searchPlants (result){
-    const searchPlantsArray = plants.filter((plants)=> {
-      return plants.name.toLowerCase().includes(result.toLowerCase());
-    })
-    setPlants(searchPlantsArray);
-  }
+  const searchPlantsArray = plants.filter((plants)=> {
+    return plants.name.toLowerCase().includes(searchText.toLowerCase());
+  })
 
   function deletePlant (doomedPlant){
     const doomedPlantID = doomedPlant.id;
-
     const newPlantsWithoutDoomedPlants = plants.filter ((plant) => {
       return plant.id !== doomedPlantID
     })
@@ -80,12 +75,11 @@ function PlantPage() {
 
 
 
-
   return (
     <main>
       <NewPlantForm addNewPlant={addNewPlant}/>
-      <Search searchPlants={searchPlants}/>
-      <PlantList plants={plants} deletePlant={deletePlant} setNewPrice={setNewPrice} newPrice={newPrice} elevatorFunction={elevatorFunction} />
+      <Search  searchText={searchText} setSearchText={setSearchText}/>
+      <PlantList plants={searchPlantsArray} deletePlant={deletePlant} setNewPrice={setNewPrice} newPrice={newPrice} elevatorFunction={elevatorFunction} />
     </main>
   );
 }

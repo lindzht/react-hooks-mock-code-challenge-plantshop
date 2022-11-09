@@ -16,7 +16,7 @@
       "id": 3,
       "name": "Pilea peperomioides",
       "image": "./images/pilea.jpg",
-      "price": "13"
+      "price": "100"
     },
     {
       "id": 4,
@@ -45,7 +45,7 @@
     {
       "name": "Cagey",
       "image": "https://www.syfy.com/sites/syfy/files/styles/blog-post-embedded--tablet-1_5x/public/2019/10/faceoff_cage.jpg",
-      "price": "0.99",
+      "price": "1000",
       "id": 8
     }
   ]
