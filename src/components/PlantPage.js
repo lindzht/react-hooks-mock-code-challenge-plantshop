@@ -36,6 +36,16 @@ function PlantPage() {
     setPlants(searchPlantsArray);
   }
 
+  function deletePlant (doomedPlant){
+    const doomedPlantID = doomedPlant.id;
+
+    const newPlantsWithoutDoomedPlants = plants.filter ((plant) => {
+      return plant.id !== doomedPlantID
+    })
+
+    setPlants(newPlantsWithoutDoomedPlants);
+    fetch(`http://localhost:6001/plants/${doomedPlantID}`, {method: "DELETE"})
+  }
 
 
 
@@ -44,7 +54,7 @@ function PlantPage() {
     <main>
       <NewPlantForm addNewPlant={addNewPlant}/>
       <Search searchPlants={searchPlants}/>
-      <PlantList plants={plants} />
+      <PlantList plants={plants} deletePlant={deletePlant} />
     </main>
   );
 }
