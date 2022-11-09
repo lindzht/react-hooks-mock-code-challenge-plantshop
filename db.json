@@ -16,13 +16,13 @@
       "id": 3,
       "name": "Pilea peperomioides",
       "image": "./images/pilea.jpg",
-      "price": "100000"
+      "price": "1"
     },
     {
       "id": 4,
       "name": "Pothos",
       "image": "./images/pothos.jpg",
-      "price": "1"
+      "price": "100"
     },
     {
       "id": 5,
@@ -34,7 +34,7 @@
       "id": 6,
       "name": "Monstera Deliciosa",
       "image": "./images/monstera.jpg",
-      "price": "10"
+      "price": "35.55"
     },
     {
       "id": 7,
@@ -49,9 +49,9 @@
       "id": 8
     },
     {
-      "name": "CageToo",
+      "name": "Cageeeey",
       "image": "https://www.syfy.com/sites/syfy/files/styles/blog-post-embedded--tablet-1_5x/public/2019/10/faceoff_cage.jpg",
-      "price": "60.00",
+      "price": "0.50",
       "id": 9
     }
   ]

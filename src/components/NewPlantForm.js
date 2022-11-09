@@ -12,6 +12,11 @@ function NewPlantForm({addNewPlant}) {
     e.preventDefault();
     // console.log(formData);
     addNewPlant(formData);
+    setFormData({
+      name: "",
+      image: "",
+      price: "",
+    })
   }
 
   function handleChange(e){
