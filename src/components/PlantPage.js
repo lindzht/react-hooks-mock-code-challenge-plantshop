@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from "react";
+import EditPlantForm from "./EditForm";
 import NewPlantForm from "./NewPlantForm";
 import PlantList from "./PlantList";
 import Search from "./Search";
@@ -6,6 +7,7 @@ import Search from "./Search";
 function PlantPage() {
 
   const [plants, setPlants] = useState([]);
+  const [newPrice, setNewPrice] = useState("")
 
 
   useEffect(() => {
@@ -47,6 +49,10 @@ function PlantPage() {
     fetch(`http://localhost:6001/plants/${doomedPlantID}`, {method: "DELETE"})
   }
 
+  function elevatorFunction (plantToEditPrice) {
+    console.log(plantToEditPrice);
+
+  }
 
 
 
@@ -54,7 +60,7 @@ function PlantPage() {
     <main>
       <NewPlantForm addNewPlant={addNewPlant}/>
       <Search searchPlants={searchPlants}/>
-      <PlantList plants={plants} deletePlant={deletePlant} />
+      <PlantList plants={plants} deletePlant={deletePlant} setNewPrice={setNewPrice} newPrice={newPrice} elevatorFunction={elevatorFunction} />
     </main>
   );
 }

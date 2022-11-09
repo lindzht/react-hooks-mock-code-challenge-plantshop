@@ -63,22 +63,38 @@ main {
 .new-plant-form {
   padding: 2rem 1rem;
   margin: 2rem 0;
-  background-color: rgba(181, 250, 181, 0.5);
+  background-color: rgba(174, 255, 174, 0.5);
 }
 
-.new-plant-form form {
+.new-plant-form form,
+.edit-plant-form form {
   display: flex;
   justify-content: center;
 }
 
-.new-plant-form input {
+.new-plant-form input,
+.edit-plant-form input {
   margin-right: 2rem;
   flex: 1;
 }
 
-.new-plant-form button {
+.new-plant-form button,
+.edit-plant-form button {
   width: 150px;
 }
+
+
+.edit-plant-form {
+  padding: 2rem 1rem;
+  margin: 2rem 0;
+  background-color: rgba(250, 229, 181, 0.5);
+}
+
+
+
+
+
+
 
 .searchbar {
   padding: 1rem;

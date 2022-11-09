@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 
-function NewPlantForm({addNewPlant}) {
+function EditPlantForm({addNewPlant}) {
 
   const [formData, setFormData] = useState({
     name: "",
@@ -23,7 +23,7 @@ function NewPlantForm({addNewPlant}) {
     };
 
   return (
-    <div className="new-plant-form">
+    <div className="edit-plant-form">
       <h2>New Plant</h2>
       <form onSubmit={handleOnSubmit}>
         <input 
@@ -51,4 +51,4 @@ function NewPlantForm({addNewPlant}) {
   );
 }
 
-export default NewPlantForm;
+export default EditPlantForm;
