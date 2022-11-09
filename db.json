@@ -10,13 +10,13 @@
       "id": 2,
       "name": "ZZ Plant",
       "image": "./images/zz-plant.jpg",
-      "price": "31.00"
+      "price": "1"
     },
     {
       "id": 3,
       "name": "Pilea peperomioides",
       "image": "./images/pilea.jpg",
-      "price": 5.99
+      "price": "13"
     },
     {
       "id": 4,

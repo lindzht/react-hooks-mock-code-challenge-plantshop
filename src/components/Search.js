@@ -4,6 +4,7 @@ function Search({searchPlants}) {
 
   function handleSearchValue (e){
     searchPlants(e.target.value)
+    
   }
 
 

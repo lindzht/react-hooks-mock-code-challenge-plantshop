@@ -9,6 +9,7 @@ function PlantPage() {
   const [plants, setPlants] = useState([]);
   const [newPrice, setNewPrice] = useState("")
 
+  console.log(newPrice);
 
   useEffect(() => {
     fetch("http://localhost:6001/plants")
@@ -16,7 +17,7 @@ function PlantPage() {
     .then ((plantData) => {
       setPlants(plantData)
     })
-  }, [plants])
+  }, [newPrice])
 
   function addNewPlant (formData){
     const newPlantArray = [...plants, formData];
