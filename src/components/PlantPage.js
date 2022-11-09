@@ -16,7 +16,7 @@ function PlantPage() {
     .then ((plantData) => {
       setPlants(plantData)
     })
-  }, [])
+  }, [plants])
 
   function addNewPlant (formData){
     const newPlantArray = [...plants, formData];
@@ -27,7 +27,7 @@ function PlantPage() {
       headers: {
         "Content-Type": "application/json"
       }})
-      
+
     setPlants(newPlantArray);
   }
   
@@ -63,7 +63,20 @@ function PlantPage() {
         "Content-Type": "application/json"
       }
     })
+    .then(res => res.json())
+    .then (newData => {
+      const newArrayWithUpdatedPrice = plants.filter((plant) => {
+        if (newData.id === plant.id) {
+          return newData;
+        } else {
+          return true;
+        }
+      });
+     setPlants(newArrayWithUpdatedPrice);
+    } 
+    )
   }
+
 
 
 
