@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from "react";
-import EditPlantForm from "./EditForm";
 import NewPlantForm from "./NewPlantForm";
 import PlantList from "./PlantList";
 import Search from "./Search";
@@ -17,7 +16,7 @@ function PlantPage() {
     .then ((plantData) => {
       setPlants(plantData)
     })
-  }, [newPrice])
+  }, [])
 
   function addNewPlant (formData){
     const newPlantArray = [...plants, formData];
@@ -32,6 +31,7 @@ function PlantPage() {
     setPlants(newPlantArray);
   }
   
+  //
   const searchPlantsArray = plants.filter((plants)=> {
     return plants.name.toLowerCase().includes(searchText.toLowerCase());
   })
@@ -50,6 +50,8 @@ function PlantPage() {
     console.log(plantToEditPrice);
     console.log(newPrice);
 
+    plantToEditPrice.price = newPrice;
+    
     fetch(`http://localhost:6001/plants/${plantToEditPrice.id}`, {
       method: "PATCH",
       body: JSON.stringify({
@@ -61,14 +63,7 @@ function PlantPage() {
     })
     .then(res => res.json())
     .then (newData => {
-      const newArrayWithUpdatedPrice = plants.filter((plant) => {
-        if (newData.id === plant.id) {
-          return newData;
-        } else {
-          return true;
-        }
-      });
-     setPlants(newArrayWithUpdatedPrice);
+      console.log(newData);
     } 
     )
   }
