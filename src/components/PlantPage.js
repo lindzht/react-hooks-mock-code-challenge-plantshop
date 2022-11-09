@@ -20,14 +20,15 @@ function PlantPage() {
 
   function addNewPlant (formData){
     const newPlantArray = [...plants, formData];
-    setPlants(newPlantArray);
-
+    
     fetch("http://localhost:6001/plants", {
       method: "POST",
       body: JSON.stringify(formData),
       headers: {
         "Content-Type": "application/json"
       }})
+      
+    setPlants(newPlantArray);
   }
   
 
@@ -51,7 +52,17 @@ function PlantPage() {
 
   function elevatorFunction (plantToEditPrice) {
     console.log(plantToEditPrice);
+    console.log(newPrice);
 
+    fetch(`http://localhost:6001/plants/${plantToEditPrice.id}`, {
+      method: "PATCH",
+      body: JSON.stringify({
+        price: newPrice
+      }),
+      headers: {
+        "Content-Type": "application/json"
+      }
+    })
   }
 
 
